@@ -1,0 +1,28 @@
+@use '@angular/material' as mat;
+@use 'styles/theme-colors' as my-theme;
+
+@use 'styles/variables';
+
+
+html {
+  @include mat.theme((
+    color: (
+      primary: my-theme.$primary-palette,
+      tertiary: my-theme.$tertiary-palette,
+    ),
+    typography: (
+      plain-family: Public Sans,
+      brand-family: sans-serif,
+      bold-weight: 900,
+      medium-weight: 500,
+      regular-weight: 300,
+    ),
+    density: 0,
+  ));
+}/* You can add global styles to this file, and also import other style files */
+
+html {
+  font: var(--mat-sys-body-large)
+}
+html, body { height: 100%; }
+body { margin: 0 }
