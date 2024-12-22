@@ -1,0 +1,38 @@
+@use '../../../styles/functions'  as fn;
+
+$primary-color: #333;
+$padding: 20px;
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+.home {
+  display: flex;
+  height: 100%;
+
+  &__header {
+    background-image: url("/assets/illustration-authentication.svg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    max-width: 35rem;
+    margin: fn.px-to-rem(20);
+  }
+
+  &__content {
+    display: flex;
+    margin: auto;
+  }
+
+  &__illustration {
+    position: relative;
+    padding: $padding;
+  }
+
+  &__figcaption {
+    font-style: italic;
+    color: $primary-color;
+  }
+}
