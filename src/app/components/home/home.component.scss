@@ -1,7 +1,4 @@
-@use '../../../styles/functions'  as fn;
-
-$primary-color: #333;
-$padding: 20px;
+@use "../../../styles/functions" as fn;
 
 :host {
   display: block;
@@ -12,13 +9,23 @@ $padding: 20px;
   display: flex;
   height: 100%;
 
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+  }
+
   &__header {
     background-image: url("/assets/illustration-authentication.svg");
     background-size: cover;
     background-position: center;
     position: relative;
-    max-width: 35rem;
+    max-width: fn.px-to-rem(560);
     margin: fn.px-to-rem(20);
+    padding: fn.px-to-rem(40);
+    color: #fff;
+    border-radius: fn.px-to-rem(12);
   }
 
   &__content {
@@ -26,13 +33,31 @@ $padding: 20px;
     margin: auto;
   }
 
-  &__illustration {
+  &__message {
     position: relative;
-    padding: $padding;
+    margin-top: auto;
+
+    &__text {
+      font: var(--mat-sys-headline-large);
+      font-weight: 700;
+      margin: 0 0 fn.px-to-rem(24);
+      max-width: fn.px-to-rem(450);
+    }
   }
 
-  &__figcaption {
-    font-style: italic;
-    color: $primary-color;
+  &__description {
+    font-size: var(--mat-sys-body-medium-size);
+    margin: 0;
   }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
